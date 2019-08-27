@@ -13,7 +13,6 @@
 - 点击提交后,开始构建定时任务
 
   ~~~flow
-  ```flow
   st=>start: 前端提交创建定时任务
   isExists=>condition: 任务是否已经存在?
   cronCreate=>operation: 数据库创建定时任务
@@ -30,7 +29,6 @@
   st->isExists->cronCreate->jenkinsCreate->jenkinsBuild->buildLogCreate->amqQueueBuild->k8sCreate->amqQueueListen->buildLogUpdate->s
   isExists(yes)->cronCreate
   isExists(no)->e
-  ```
   ~~~
 
   
